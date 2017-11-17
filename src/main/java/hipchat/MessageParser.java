@@ -59,5 +59,8 @@ public class MessageParser
         return html.substring(html.indexOf("<title>") + 7, html.indexOf("</title>"));
     }
 
+    //The only method of RestTemplate we use is getForObject, which is thread-safe. As the controller
+    // is a singleton, should we need to use restTemplate.setMessageConverters in the future, we need
+    // to instantiate this object inside the parse method rather than make it an instance variable.
     RestTemplate restTemplate = new RestTemplate();
 }
