@@ -35,7 +35,9 @@ behavior.
 
 TODO:
 1. Need to create integration tests to test the integration with external resources.
-2. Need to define exceptions in service and throw them with meaningful messages rather than throw those exception
-from JAVA library.
+2. Need to gracefully handle exceptions:
+   1) Need to define exceptions in service and throw them with meaningful messages rather than throw generic exceptions.
+   2) Some exceptions need to be logically handled in the code. e.g ResourceAccessException will be thrown when an input url
+      is not loadable. Probably should swallow this exception and ignore this url.
 3. Need to build access check and reject unauthorized requests.
 4. Messages may need to be encrypted during transmission.

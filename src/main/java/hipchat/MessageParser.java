@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
+    
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
@@ -47,6 +47,7 @@ public class MessageParser
         return message;
     }
 
+    //TODO: handle the case that the input url is not loadable.
     private Message.Link buildLink(String url)
     {
         String html = restTemplate.getForObject(url, String.class);
